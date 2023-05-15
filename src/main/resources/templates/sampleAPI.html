@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>ペット一覧</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<ul>
+		<li th:each="pet : ${petsList}">
+			<p th:text="Type： + ${pet.type}"></p>
+			<p th:text="Price： + ${pet.price}"></p>
+		</li>
+	</ul>
+</body>
