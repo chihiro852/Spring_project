@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.sampleAPI.service;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.data.Pets;
-import com.example.demo.repository.SampleAPIRepository;
+import com.example.demo.sampleAPI.data.Animals;
+import com.example.demo.sampleAPI.repository.SampleAPIRepository;
 
 @Service
 public class SampleAPIService {
@@ -18,11 +18,11 @@ public class SampleAPIService {
 		this.sampleAPIRepository = sampleAPIRepository;
 	}
 
-	public List<Pets> getPets() throws IOException {
+	public List<Animals> getAnimals() throws IOException {
 
-		Pets[] petsList = sampleAPIRepository.getPets();
+		Animals[] animalsList = sampleAPIRepository.getAnimals();
 
-		return Arrays.asList(petsList);
+		return Arrays.asList(animalsList);
 
 	}
 }
