@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.example.demo.sampleAPI.repository;
 
 import java.io.IOException;
 
@@ -6,15 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.demo.data.Pets;
+import com.example.demo.sampleAPI.data.Animals;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class SampleAPIRepository {
 
-	public Pets[] getPets() throws IOException {
+	public Animals[] getAnimals() throws IOException {
 
-		String url = "https://wk3sh1nsp4.execute-api.ap-northeast-1.amazonaws.com/test/pets";
+		String url = "https://jsn9xu2vsk.execute-api.ap-northeast-1.amazonaws.com/sample/sampleapi";
 
 		RestTemplate rest = new RestTemplate();
 
@@ -24,18 +24,18 @@ public class SampleAPIRepository {
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		Pets[] petsList = mapper.readValue(json, Pets[].class);
+		Animals[] animalsList = mapper.readValue(json, Animals[].class);
 
-		return petsList;
+		return animalsList;
 	}
 
-	public Pets[] getPets2() throws IOException {
+	public Animals[] getAnimals2() throws IOException {
 
-		String url = "https://wk3sh1nsp4.execute-api.ap-northeast-1.amazonaws.com/test/pets";
+		String url = "https://jsn9xu2vsk.execute-api.ap-northeast-1.amazonaws.com/sample/sampleapi";
 
 		RestTemplate rest = new RestTemplate();
 
-		ResponseEntity<Pets[]> response = rest.getForEntity(url, Pets[].class);
+		ResponseEntity<Animals[]> response = rest.getForEntity(url, Animals[].class);
 
 		return response.getBody();
 
