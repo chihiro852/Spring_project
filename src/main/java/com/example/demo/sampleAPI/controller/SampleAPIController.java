@@ -29,4 +29,5 @@ public class SampleAPIController {
 		return "sampleAPI.html";
 
 	}
+
 }
