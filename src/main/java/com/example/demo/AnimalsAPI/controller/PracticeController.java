@@ -1,14 +1,17 @@
-package com.example.demo.practiceAPI.controller;
+package com.example.demo.AnimalsAPI.controller;
 
 import java.io.IOException;
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.practiceAPI.service.PracticeService;
-import com.example.demo.sampleAPI.data.Animals;
+import com.example.demo.AnimalsAPI.data.Animals;
+import com.example.demo.AnimalsAPI.service.PracticeService;
 
+@Controller
 public class PracticeController {
 
 	private final PracticeService practiceService;
@@ -29,7 +32,7 @@ public class PracticeController {
 	}
 
 	@GetMapping("/showAnimal")
-	public String getPets(Model model, int id) throws IOException {
+	public String getAnimal(@RequestParam("list") int id, Model model) throws IOException {
 
 		List<Animals> animal = practiceService.getAnimals(id);
 
