@@ -1,4 +1,4 @@
-package com.example.demo.practiceAPI.service;
+package com.example.demo.AnimalsAPI.service;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.practiceAPI.repository.PracticeRepository;
-import com.example.demo.sampleAPI.data.Animals;
+import com.example.demo.AnimalsAPI.data.Animals;
+import com.example.demo.AnimalsAPI.repository.PracticeRepository;
 
 @Service
 public class PracticeService {

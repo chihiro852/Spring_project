@@ -1,4 +1,4 @@
-package com.example.demo.practiceAPI.data;
+package com.example.demo.AnimalsAPI.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
