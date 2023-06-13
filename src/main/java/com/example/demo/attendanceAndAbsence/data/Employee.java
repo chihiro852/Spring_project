@@ -1,7 +1,6 @@
 package com.example.demo.attendanceAndAbsence.data;
 
 import java.sql.Timestamp;
-import java.time.YearMonth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,7 +19,7 @@ public class Employee {
 	private String hometown;
 
 	@JsonProperty("joining_month")
-	private YearMonth joining_month;
+	private String joining_month;
 
 	@JsonProperty("created_at")
 	private Timestamp created_at;

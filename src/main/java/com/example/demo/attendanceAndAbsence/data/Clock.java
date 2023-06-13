@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class ClockInAndOut {
+public class Clock {
 
 	@JsonProperty("id")
 	private int id;
