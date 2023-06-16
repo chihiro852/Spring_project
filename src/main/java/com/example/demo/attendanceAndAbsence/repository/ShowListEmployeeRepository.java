@@ -13,7 +13,6 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.attendanceAndAbsence.data.Employee;
-import com.example.demo.attendanceAndAbsence.utility.Formatter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
@@ -46,19 +45,19 @@ public class ShowListEmployeeRepository {
 
 			Employee[] employeeArrays = objectMapper.readValue(json, Employee[].class);
 
-			for (Employee employee : employeeArrays) {
-
-				String joining_Date = employee.getJoining_month();
-
-				if (joining_Date != null) {
-
-					String formattedDate = Formatter.yearMonthFormat(joining_Date, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z", "yyyy/MM");
-
-					employee.setJoining_month(formattedDate);
-
-				}
-
-			}
+//			for (Employee employee : employeeArrays) {
+//
+//				String joining_Date = employee.getJoining_month();
+//
+//				if (joining_Date != null) {
+//
+//					String formattedDate = Formatter.yearMonthFormat(joining_Date, "yyyy-MM-dd HH:mm:ssZ", "yyyy/MM");
+//
+//					employee.setJoining_month(formattedDate);
+//
+//				}
+//
+//			}
 
 			List<Employee> employees = Arrays.asList(employeeArrays);
 

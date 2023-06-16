@@ -20,14 +20,19 @@ public class ShowListEmployeeController {
 		this.service = service;
 	}
 
-	@GetMapping("/showListEmployee")
+	@GetMapping("showListEmployee")
 	public String getEmployees(Model model) throws IOException, URISyntaxException {
 
 		List<Employee> employees = service.getEmployee(0);
 
 		model.addAttribute("employees", employees);
 
-		return "showListEmployee.html";
+		return "attendanceAndAbsence/showListEmployee.html";
+	}
+
+	@GetMapping("/newEmployee")
+	public String newEmployee() {
+		return "attendanceAndAbsence/newEmployee.html";
 	}
 
 }
