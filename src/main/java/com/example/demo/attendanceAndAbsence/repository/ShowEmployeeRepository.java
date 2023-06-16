@@ -27,7 +27,7 @@ public class ShowEmployeeRepository {
 		this.objectMapper = new ObjectMapper();
 	}
 
-	public List<Clock> getClock(int employeeId) throws Exception, URISyntaxException {
+	public List<Clock> getClock(int employeeId) throws IOException, URISyntaxException {
 		String apiUrl = BASE_API_URL + employeeId;
 
 		RequestEntity<Void> request = RequestEntity.get(new URI(apiUrl)).build();

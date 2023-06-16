@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>社員詳細</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>社員詳細</h1>
+	<h2 th:each="employee : ${employee}" th:text="${employee.name}"></h2>
+	<div th:if="${not #lists.isEmpty(clock)}">
+		<table border="1">
+			<tr>
+				<th>出勤時間</th>
+				<th>休憩開始時間</th>
+				<th>休憩終了時間</th>
+				<th>退勤時間</th>
+			</tr>
+			<tr th:each="employee : ${clock}">
+				<td th:text="${employee.clock_in}"></td>
+				<td th:text="${employee.break_start}"></td>
+				<td th:text="${employee.break_end}"></td>
+				<td th:text="${employee.clock_out}"></td>
+			</tr>
+		</table>
+	</div>
+	<form th:action="showListEmployee" method="get">
+		<input type="submit" value="社員一覧へ">
+	</form>
+</body>
+
+</html>
