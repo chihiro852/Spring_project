@@ -39,9 +39,9 @@ public class ShowEmployeeRepository {
 
 			Clock[] clockArrays = objectMapper.readValue(json, Clock[].class);
 
-			List<Clock> clock = Arrays.asList(clockArrays);
+			List<Clock> clocks = Arrays.asList(clockArrays);
 
-			return clock;
+			return clocks;
 
 		} catch (RestClientException e) {
 			throw new IOException("Failed to fetch employee data from the API.", e);
