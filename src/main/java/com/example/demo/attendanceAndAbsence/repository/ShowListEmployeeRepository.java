@@ -45,20 +45,6 @@ public class ShowListEmployeeRepository {
 
 			Employee[] employeeArrays = objectMapper.readValue(json, Employee[].class);
 
-//			for (Employee employee : employeeArrays) {
-//
-//				String joining_Date = employee.getJoining_month();
-//
-//				if (joining_Date != null) {
-//
-//					String formattedDate = Formatter.yearMonthFormat(joining_Date, "yyyy-MM-dd HH:mm:ssZ", "yyyy/MM");
-//
-//					employee.setJoining_month(formattedDate);
-//
-//				}
-//
-//			}
-
 			List<Employee> employees = Arrays.asList(employeeArrays);
 
 			return employees;

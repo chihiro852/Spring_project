@@ -30,10 +30,10 @@ public class ShowEmployeeController {
 
 		List<Employee> employee = listService.getEmployee(employeeId);
 
-		List<Clock> clock = service.getClock(employeeId);
+		List<Clock> clocks = service.getClock(employeeId);
 
 		model.addAttribute("employee", employee);
-		model.addAttribute("clock", clock);
+		model.addAttribute("clock", clocks);
 
 		return "attendanceAndAbsence/showEmployee.html";
 
