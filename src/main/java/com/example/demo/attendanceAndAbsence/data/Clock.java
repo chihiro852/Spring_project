@@ -1,7 +1,5 @@
 package com.example.demo.attendanceAndAbsence.data;
 
-import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
@@ -16,15 +14,15 @@ public class Clock {
 	private int employee_id;
 
 	@JsonProperty("clock_in")
-	private LocalDateTime clock_in;
+	private String clock_in;
 
 	@JsonProperty("clock_out")
-	private LocalDateTime clock_out;
+	private String clock_out;
 
 	@JsonProperty("break_start")
-	private LocalDateTime break_start;
+	private String break_start;
 
 	@JsonProperty("break_end")
-	private LocalDateTime break_end;
+	private String break_end;
 
 }
