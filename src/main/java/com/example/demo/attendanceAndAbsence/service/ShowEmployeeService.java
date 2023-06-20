@@ -21,12 +21,6 @@ public class ShowEmployeeService {
 	public List<Clock> getClock(int employeeId) throws IOException, URISyntaxException {
 
 		List<Clock> clocks = repository.getClock(employeeId);
-		
-		//		for (Clock clock : clocks) {
-		//			
-		//			String date = clock.getClock_in();
-		//			
-		//		}
 
 		return clocks;
 
