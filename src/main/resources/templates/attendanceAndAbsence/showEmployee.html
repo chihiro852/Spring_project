@@ -9,6 +9,13 @@
 <body>
 	<h1>社員詳細</h1>
 	<h2 th:each="employee : ${employee}" th:text="${employee.name}"></h2>
+	<form th:action="clock" method="post">
+		<input type="hidden" th:name="employee_id" th:value="${employee.id}">
+		<input type="submit" th:name="clockIn" th:value="出勤">
+		<input type="submit" th:name="breakStart" th:value="休憩開始">
+		<input type="submit" th:name="breakEnd" th:value="休憩終了">
+		<input type="submit" th:name="clockOut" th:value="退勤">
+	</form>
 	<div th:if="${not #lists.isEmpty(clock)}">
 		<table border="1">
 			<tr>
