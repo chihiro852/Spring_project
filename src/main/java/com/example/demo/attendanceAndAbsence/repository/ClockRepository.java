@@ -2,7 +2,6 @@ package com.example.demo.attendanceAndAbsence.repository;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.time.LocalDateTime;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,19 +23,14 @@ public class ClockRepository {
 		this.headers = new HttpHeaders();
 	}
 
-	public void postClock(int id, String clockIn, String breakStart, String breakEnd, String clockOut) throws IOException, URISyntaxException {
+	public void postClock(int employeeId, String clockIn, String breakStart, String breakEnd, String clockOut) throws IOException, URISyntaxException {
 		String apiUrl = BaseApiUrl;
-		LocalDateTime now = LocalDateTime.now();
 
 		try {
 
 			headers.setContentType(MediaType.APPLICATION_JSON);
 
-			String requestBody = "";
-
-			if (clockIn != null) {
-				requestBody = "{\"body\": \"{\\\"employee_id\\\":\\\"" + id + "\\\", \\\"clock_in\\\":\\\"" + now + "\\\"}\"}";
-			} 
+			String requestBody = "{\"body\": \"{\\\"employee_id\\\":\\\"" + employeeId + "\\\", \\\"clock_in\\\":\\\"" + clockIn + "\\\", \\\"break_start\\\":\\\"" + breakStart + "\\\", \\\"break_end\\\":\\\"" + breakEnd + "\\\", \\\"clock_out\\\":\\\"" + clockOut + "\\\"}\"}";
 
 			HttpEntity<String> requestEntity = new HttpEntity<>(requestBody, headers);
 

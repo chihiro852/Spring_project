@@ -10,11 +10,11 @@
 	<h1>社員詳細</h1>
 	<h2 th:each="employee : ${employee}" th:text="${employee.name}"></h2>
 	<form th:action="clock" method="post">
-		<input type="hidden" th:name="employee_id" th:value="${employee.id}">
-		<input type="submit" th:name="clockIn" th:value="出勤">
-		<input type="submit" th:name="breakStart" th:value="休憩開始">
-		<input type="submit" th:name="breakEnd" th:value="休憩終了">
-		<input type="submit" th:name="clockOut" th:value="退勤">
+		<input type="hidden" th:each="employee : ${employee}" th:name="employee_id" th:value="${employee.id}">
+		<input type="submit" th:name="button" th:value="出勤">
+		<input type="submit" th:name="button" th:value="休憩開始">
+		<input type="submit" th:name="button" th:value="休憩終了">
+		<input type="submit" th:name="button" th:value="退勤">
 	</form>
 	<div th:if="${not #lists.isEmpty(clock)}">
 		<table border="1">
@@ -24,11 +24,11 @@
 				<th>休憩終了時間</th>
 				<th>退勤時間</th>
 			</tr>
-			<tr th:each="employee : ${clock}">
-				<td th:text="${employee.clock_in}"></td>
-				<td th:text="${employee.break_start}"></td>
-				<td th:text="${employee.break_end}"></td>
-				<td th:text="${employee.clock_out}"></td>
+			<tr th:each="clock : ${clock}">
+				<td th:text="${clock.clock_in}"></td>
+				<td th:text="${clock.break_start}"></td>
+				<td th:text="${clock.break_end}"></td>
+				<td th:text="${clock.clock_out}"></td>
 			</tr>
 		</table>
 	</div>
